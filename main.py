@@ -1,11 +1,12 @@
 import os
 import sys
 
+import pandas as pd
 from PyQt6.QtCore import Qt
 from PyQt6.QtGui import QPixmap
 
 from PyQt6 import uic
-from PyQt6.QtWidgets import QApplication, QMainWindow, QFileDialog, QWidget, QLabel, QVBoxLayout
+from PyQt6.QtWidgets import QApplication, QMainWindow, QFileDialog, QWidget, QLabel, QVBoxLayout, QTableWidgetItem
 from PyQt6 import QtCore, QtGui, QtWidgets
 
 
@@ -109,6 +110,8 @@ class ManageScheduleWindow(QtWidgets.QMainWindow):
         logoutWindow = None
         self._logoutWindow = logoutWindow
 
+
+
         self.viewSched.clicked.connect(self.viewButton)
         self.manSched.clicked.connect(self.manButton)
         self.records.clicked.connect(self.recButton)
@@ -145,11 +148,15 @@ class ManageScheduleWindow(QtWidgets.QMainWindow):
 
 
 
+
+
 class RecordsWindow(QtWidgets.QMainWindow):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         uic.loadUi("records.ui", self)
         viewScheduleWindow = None
+        self.scope_file_path = 'scopes.xlsx'
+        self.worksheet_name = 'scope'
         self._viewScheduleWindow = viewScheduleWindow
 
         manageScheduleWindow = None
@@ -165,8 +172,8 @@ class RecordsWindow(QtWidgets.QMainWindow):
         self.manSched.clicked.connect(self.manButton)
         self.records.clicked.connect(self.recButton)
         self.logout.clicked.connect(self.logoutButton)
-
         self.scope.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.Scope))
+        # self.scope.clicked.connect(lambda _, xl_path=self.scope_file_path, sheet_name=self.worksheet_name: self.loadExcelData(xl_path, sheet_name))
         self.washer.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.Washer))
         self.mainBackButton.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.MainPage))
         self.mainBackButton_2.clicked.connect(lambda: self.stackedWidget.setCurrentWidget(self.MainPage))
@@ -194,6 +201,28 @@ class RecordsWindow(QtWidgets.QMainWindow):
         if self._logoutWindow is None:
             self._logoutWindow = LogoutWindow(self)
         self._logoutWindow.show()
+
+    # def loadExcelData(self, excel_file_dir, worksheet_name):
+    #
+    #     df = pd.read_excel(excel_file_dir, worksheet_name)
+    #     if df.size == 0:
+    #         return
+    #
+    #     df.fillna('', inplace=True)
+    #     self.scopeTable.setRowCount(df.shape[0])
+    #     self.scopeTable.setColumnCount(df.shape[1])
+    #     self.scopeTable.setHorizontalHeaderLabels(df.columns)
+    #
+    #     # returns pandas array object
+    #     for row in df.iterrows():
+    #         values = row[1]
+    #         for col_index, value in enumerate(values):
+    #             if isinstance(value, (float, int)):
+    #                 value = '{0:0,.0f}'.format(value)
+    #             scopeTableItem = QTableWidgetItem(str(value))
+    #             self.scopeTable.setItem(row[0], col_index, scopeTableItem)
+    #
+    #     self.scopeTable.setColumnWidth(2, 300)
 
 
 class LogoutWindow(QtWidgets.QMainWindow):
