@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1321</width>
-    <height>782</height>
+    <width>1366</width>
+    <height>780</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -99,41 +99,11 @@
       <height>650</height>
      </rect>
     </property>
-    <widget class="QWidget" name="ViewSchedule">
-     <widget class="QLabel" name="label">
-      <property name="geometry">
-       <rect>
-        <x>430</x>
-        <y>210</y>
-        <width>281</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>View Schedule</string>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="ManageSchedule">
-     <widget class="QLabel" name="label_4">
-      <property name="geometry">
-       <rect>
-        <x>400</x>
-        <y>50</y>
-        <width>391</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Manage Schedule</string>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="Records">
+    <widget class="QWidget" name="MainPage">
      <widget class="QPushButton" name="scope">
       <property name="geometry">
        <rect>
-        <x>310</x>
+        <x>360</x>
         <y>230</y>
         <width>261</width>
         <height>141</height>
@@ -146,7 +116,7 @@
      <widget class="QPushButton" name="washer">
       <property name="geometry">
        <rect>
-        <x>770</x>
+        <x>820</x>
         <y>230</y>
         <width>261</width>
         <height>141</height>
@@ -156,21 +126,32 @@
        <string>Washer</string>
       </property>
      </widget>
-     <zorder>washer</zorder>
-     <zorder>scope</zorder>
     </widget>
     <widget class="QWidget" name="Scope">
-     <widget class="QLabel" name="label_3">
+     <widget class="QLabel" name="label">
       <property name="geometry">
        <rect>
-        <x>250</x>
-        <y>230</y>
+        <x>690</x>
+        <y>250</y>
         <width>47</width>
         <height>13</height>
        </rect>
       </property>
       <property name="text">
        <string>Scope</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="mainBackButton">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>20</y>
+        <width>111</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Back</string>
       </property>
      </widget>
     </widget>
@@ -188,45 +169,17 @@
        <string>Washer</string>
       </property>
      </widget>
-    </widget>
-    <widget class="QWidget" name="Logout">
-     <widget class="QPushButton" name="yesButton">
+     <widget class="QPushButton" name="mainBackButton_2">
       <property name="geometry">
        <rect>
-        <x>480</x>
-        <y>300</y>
+        <x>20</x>
+        <y>20</y>
         <width>111</width>
-        <height>61</height>
+        <height>41</height>
        </rect>
       </property>
       <property name="text">
-       <string>Yes</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_2">
-      <property name="geometry">
-       <rect>
-        <x>470</x>
-        <y>200</y>
-        <width>341</width>
-        <height>71</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Are you sure you want to Log Out?</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="noButton">
-      <property name="geometry">
-       <rect>
-        <x>710</x>
-        <y>300</y>
-        <width>111</width>
-        <height>61</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>No</string>
+       <string>Back</string>
       </property>
      </widget>
     </widget>
