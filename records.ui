@@ -126,6 +126,32 @@
        <string>Washer</string>
       </property>
      </widget>
+     <widget class="QPushButton" name="pushButton">
+      <property name="geometry">
+       <rect>
+        <x>360</x>
+        <y>410</y>
+        <width>261</width>
+        <height>91</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Scope(Open In Excel)</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_2">
+      <property name="geometry">
+       <rect>
+        <x>820</x>
+        <y>410</y>
+        <width>261</width>
+        <height>91</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Washer(Open In Excel)</string>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="Scope">
      <widget class="QPushButton" name="mainBackButton">
